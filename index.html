@@ -49,7 +49,7 @@
             body {
                 background-color: #34495e; /* Mírná změna barvy pozadí pro mobil */
             }
-    }   
+        }   
     </style>
 </head>
 <body>
@@ -63,7 +63,6 @@
         <button onclick="alert('Gratuluji k vytvoření stylové vizitky!')">Klikni na mě!</button>
         <br><br>
         <a href="https://www.google.com" style="color: #2980b9;">Můj profil na LinkedIn (brzy)</a>
-
         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ccc;">
         <h3>Napiš mi vzkaz:</h3>
         <input type="text" id="jmeno" placeholder="Tvé jméno" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
@@ -74,14 +73,20 @@
 
        <script>
             function pozdravUzivatele() {
-                // Tohle vezme text z políčka
                 let jmeno = document.getElementById("jmeno").value;
-        
-                // Tohle vypíše zprávu na stránku
+                let vystup = document.getElementById("vystup");
+
                 if (jmeno === "") {
-                    document.getElementById("vystup").innerHTML = "Prosím, napiš své jméno.";
-                } else {
-                    document.getElementById("vystup").innerHTML = "Ahoj " + jmeno + "! Rád tě poznávám.";
+                    vystup.innerHTML = "Prosím, napiš své jméno.";
+                    vystup.style.color = "red";
+                } 
+                else if (jmeno.toLowerCase() === "batman") {
+                    vystup.innerHTML = "Zdravím tě, Temný rytíři! Gotham tě potřebuje.";
+                    vystup.style.color = "black";
+                } 
+                else {
+                    vystup.innerHTML = "Ahoj " + jmeno + "! Rád tě poznávám.";
+                    vystup.style.color = "#27ae60"; // Zelená
                 }
             }
         </script>
